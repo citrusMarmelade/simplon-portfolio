@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+:any-link {
+    color: unset;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: normal;
+}

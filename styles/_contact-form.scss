@@ -1,0 +1,18 @@
+@use "mixins" as *;
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    min-width: min(90%, 350px);
+    width: 60%;
+    @include x(margin, auto);
+
+    * + * {
+        margin-top: 1rem;
+    }
+    input, textarea {
+        padding: 0.5rem;
+        border: 1px solid rgba(black, 0.2);
+        border-radius: 0.25rem;
+    }
+}

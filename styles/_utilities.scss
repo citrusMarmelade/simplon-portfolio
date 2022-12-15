@@ -1,0 +1,92 @@
+@use "responsive" as *;
+@use "mixins" as *;
+@use "variables" as *;
+
+@include media-bps() using ($bp-name) {
+    $displays: (block, inline, inline-block, flex, none);
+    @each $display in $displays {
+        .d#{$bp-name}#{$display} {
+            display: $display;
+        }
+    }
+
+    @for $i from 1 through 10 {
+        $i: $i * 10;
+        .w#{$bp-name}#{$i} {
+            width: $i * 1%;
+        }
+        .h#{$bp-name}#{$i} {
+            height: $i * 1%;
+        }
+    }
+
+    $paddings: $spacing;
+    $margins: map-merge($spacing, (auto: auto));
+    @include sides() using ($s-name, $side) {
+        @each $name, $value in $paddings {
+            .p#{$s-name}#{$bp-name}#{$name} {
+                padding#{$side}: $value;
+            }
+        }
+        
+        @each $name, $value in $margins {
+            .m#{$s-name}#{$bp-name}#{$name} {
+                margin#{$side}: $value;
+            }
+        }
+    }
+    @each $name, $value in $paddings {
+        .px#{$bp-name}#{$name} {
+            @include x(padding, $value);
+        }
+        .py#{$bp-name}#{$name} {
+            @include y(padding, $value);
+        }
+    }
+    @each $name, $value in $margins {
+        .mx#{$bp-name}#{$name} {
+            @include x(margin, $value);
+        }
+        .my#{$bp-name}#{$name} {
+            @include y(margin, $value);
+        }
+    }
+}
+
+.text {
+    @for $i from 1 through 3 {
+        &size-#{$i} {
+            font-size: 0.5rem * ($i + 1);
+        }
+    }
+
+    @each $name, $value in $font-weights {
+        &-#{$name} {
+            font-weight: $value;
+        }
+    }
+
+    $aligns: (left, center, right, justify);
+    @each $align in $aligns {
+        &-#{$align} {
+            text-align: $align;
+        }
+    }
+
+
+    &-italic {
+        font-style: italic;
+    }
+
+    @each $name, $value in $colors {
+        &-#{$name} {
+            color: $value;
+        }
+    }
+}
+@each $name, $value in $colors {
+    .bg-#{$name} {
+        background-color: $value;
+    }
+}
+

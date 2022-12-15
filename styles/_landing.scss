@@ -1,0 +1,17 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.landing {
+    background-image: url("/images/modern.jpg");
+    color: white;
+    display: flex;
+    height: 100vh;
+    &__content {
+        margin: auto;
+    }
+    &__title {
+        font-size: 2rem;
+        text-transform: uppercase;
+        @include y(padding, $spacer * 0.5)
+    }
+}

@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+.footer {
+    &__copy {
+
+    }
+    &__icons {
+        gap: 0 10px;
+        justify-content: center;
+        padding: $spacer * 0.5;
+        .material-icons {
+            font-size: 2rem;
+        }
+    }
+    &__icon {
+        border: 1px white solid;
+        border-radius: 100%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+    }
+}

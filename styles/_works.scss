@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+.works {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-auto-rows: auto;
+    gap: $spacer * 1.5;
+    justify-content: space-around;
+    align-items: center;
+    &__work {
+        width: 100%;
+    }
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    gap: $spacer * 0.75;
+    margin-bottom: $spacer * 2;
+    &__item {
+        padding: $spacer * 0.5 $spacer;
+        background: get_color(light);
+        &:hover {
+            background: black;
+            color: get_color(light);
+        }
+    }
+}

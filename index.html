@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header id="top" class="landing">
+        <div class="landing__content">
+            Bonjour
+            <h1 class="landing__title text-bold">Je suis Emmanuel Armengaud<br>développeur web & python</h1>
+            Création moderne et responsive pour le web
+        </div>
+
+    </header>
+    <nav class="row nav">
+        <input class="d-none" type="checkbox" id="burger-open" />
+        <div class="nav__title"><span>E.</span><span>Armengaud</span></div>
+        <label class="hamburger-lines d-lg-none" for="burger-open">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </label>
+        <ul class="nav__list ml-auto">
+            <li class="nav__item"><a href="#top">Acceuil</a></li>
+            <li class="nav__item"><a href="#presentation">Présentation</a></li>
+            <li class="nav__item"><a href="#realisation">Réalisation</a></li>
+            <li class="nav__item"><a href="#services">Activités</a></li>
+            <li class="nav__item"><a href="#competences">Compétences</a></li>
+            <li class="nav__item"><a href="#contact">Contact</a></li>
+            <li class="nav__item"><a href="">Mon CV</a></li>
+        </ul>
+    </nav>
+    <article id="presentation" class="row section">
+        <div class="section__header" data-bg-text="Qui suis-je ?">
+            <h2>Presentation</h2>
+        </div>
+        <p class="pb-3 text-center">
+            <span class="text-bold text-italic">Développeur passionné</span>
+            dans le domaine du web depuis plus de 6 ans, actuellement
+            <span class="text-bold text-italic">développeur Web</span>.
+            Je conçois et réalise des sites web du cahier des charges à la mise en ligne.
+            Je developpe aussi en <span class="text-bold">JAVA</span>,
+            ce qui me permet de développer des applications mobiles android.
+        </p>
+        <p class="text-center">
+            J'ai quelques projets intéressants <a class="text-cyan" href="">à voir.</a><br>
+            Vous souhaitez avoir mon CV au format PDF c'est par <a class="text-cyan" href="">ici.</a>
+        </p>
+    </article>
+    <article id="realisation" class="row section">
+        <div class="section__header" data-bg-text="Portfolio">
+            <h2>Mes travaux</h2>
+        </div>
+        <div class="filter">
+            <div class="filter__item"><a href="#">Tous</a></div>
+            <div class="filter__item"><a href="#">Symfony</a></div>
+            <div class="filter__item"><a href="#">Django</a></div>
+            <div class="filter__item"><a href="#">Wordpress</a></div>
+        </div>
+        <div class="works">
+            <img src="/images/img_travaux_1.jpg" alt="" class="works__work">
+            <img src="/images/img_travaux_2.jpg" alt="" class="works__work">
+            <img src="/images/img_travaux_3.jpg" alt="" class="works__work">
+            <img src="/images/img_travaux_4.jpg" alt="" class="works__work">
+            <img src="/images/img_travaux_5.jpg" alt="" class="works__work">
+            <img src="/images/img_travaux_6.jpg" alt="" class="works__work">
+            <img src="/images/img_travaux_7.jpg" alt="" class="works__work">
+            <img src="/images/img_travaux_8.jpg" alt="" class="works__work">
+        </div>
+    </article>
+    <article id="services" class="row section">
+        <div class="section__header" data-bg-text="Services">
+            <h2>
+                <span>Avant de vouloir qu'un logiciel soit reutilisable,</span>
+                il faudrais d'abord qu'il ait été utilisable.
+            </h2>
+        </div>
+        <ul class="services-list">
+            <li class="services-list__item">
+                <img src="/images/img_competences_1.png" alt="">
+                Mutli-Plateforme
+            </li>
+            <li class="services-list__item">
+                <img src="/images/img_competences_2.png" alt="">
+                Développement Web
+            </li>
+            <li class="services-list__item">
+                <img src="/images/img_competences_3.png" alt="">
+                Applications Web
+            </li>
+            <li class="services-list__item">
+                <img src="/images/img_competences_4.png" alt="">
+                Réferecement
+            </li>
+            <li class="services-list__item">
+                <img src="/images/img_competences_5.png" alt="">
+                Accompagnement
+            </li>
+            <li class="services-list__item">
+                <img src="/images/img_competences_6.png" alt="">
+                Maintenance Web
+            </li>
+        </ul>
+    </article>
+    <article id="competences" class="skills row row--fullsize mx-auto w-80 w-lg-100 section">
+        <div class="skills__side-img"></div>
+        <div class="skills__skills">
+            <div class="section__header" data-bg-text="A propos">
+                <h2>Mes compétences à votre service</h2>
+            </div>
+            <div class="skill-container">
+                <div class="skill skill--html">html5</div>
+            </div>
+            <div class="skill-container">
+                <div class="skill skill--css">css</div>
+            </div>
+            <div class="skill-container">
+                <div class="skill skill--python">python</div>
+            </div>
+            <div class="skill-container">
+                <div class="skill skill--js">javascript</div>
+            </div>
+            <div class="skill-container">
+                <div class="skill skill--postgre">postgre</div>
+            </div>
+            <div class="skill-container">
+                <div class="skill skill--php">php</div>
+            </div>
+        </div>
+    </article>
+    <article id="contact" class="row section">
+        <div class="section__header" data-bg-text="Contact">
+            <h2>
+                Démarrons un projet ensemble, n’hésitez pas à me contacter
+            </h2>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Nom">
+            <input type="email" name="email" placeholder="Adresse e-mail">
+            <textarea name="" id="" cols="30" rows="4" placeholder="Votre Message"></textarea>
+            <button class="btn textsize-2 bg-dark text-light" type="submit">me contacter</button>
+        </form>
+    </article>
+    <footer class="footer bg-dark text-light">
+        <div class="row d-flex footer__icons">
+            <a href="mailto:example@example.com">
+                <div class="footer__icon"><span class="material-icons m-auto">email</span></div>
+            </a>
+            <a href="https://github.com/citrusMarmelade/">
+                <div class="footer__icon"><img src="images/img_footer_2.png"></div>
+            </a>
+            <a href="https://www.linkedin.com/">
+                <div class="footer__icon"><img src="images/img_footer_3.png"></div>
+            </a>
+
+        </div>
+        <div class="footer__copy text-center">🄯 Emmanuel ARMENGAUD, Tous droits renversés.</div>
+    </footer>
+</body>
+
+</html>

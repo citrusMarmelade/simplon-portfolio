@@ -1,0 +1,118 @@
+@use "sass:map";
+@use "mixins" as *;
+@use "variables" as *;
+@use "responsive" as *;
+
+$nav-height: 4rem;
+
+.nav {
+    display: flex;
+    position: sticky;
+    height: $nav-height;
+    top: 0;
+    background: white;
+    z-index: 1;
+    box-shadow: 0 1px 4px rgb(150 150 150 / 15%);
+
+    ~ [id], ~ * [id] {
+        scroll-margin-top: $nav-height;
+    }
+
+    &__list {
+        display: flex;
+        
+        @include media-bp-down(lg) {
+            transform: translateX(150%);
+            height: calc(100vh - $nav-height);
+            position: absolute;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: $nav-height;
+            @include x(margin, -5%);
+            background: white;
+            width:100%;
+            transition: transform 0.5s ease-in-out; 
+        }
+    }
+
+    &__title {
+        padding: 1rem 0.5rem;
+        text-transform: uppercase;
+        margin-right: auto;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+    }
+
+    &__item {
+        display: flex;
+
+        padding: 1rem 0.5rem;
+
+        text-transform: uppercase;
+        text-align: center;
+        color: black;
+
+        transition: 0.7s color, 0.7s background-color;
+        &:hover {
+            background: black;
+            color: white;
+        }
+        a {
+            width: 100%;
+            @include y(margin, auto);
+        }
+    }
+    input[type="checkbox"]:checked ~ {
+        .nav__list {
+            transform: translateX(0);
+        }
+        .hamburger-lines {
+            .line1 {
+                transform: rotate(45deg);
+            }
+            .line2 {
+                transform: scaleY(0);
+            }
+            .line3 {
+                transform: rotate(-45deg);
+            }
+        }
+        .logo {
+            display: none;
+        }
+    }
+}
+
+.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 26px;
+    width: 32px;
+    z-index: 2;
+
+    @include y(margin, auto);
+
+    .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #0e2431;
+    }
+    .line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+    .line2 {
+        transition: transform 0.2s ease-in-out;
+    }
+    .line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+}
+

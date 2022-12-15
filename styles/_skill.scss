@@ -1,0 +1,68 @@
+@use "variables" as *;
+@use "responsive" as *;
+
+$skills:
+    html #e44d26 94% url("/images/img_techno_html.png"),
+    css #264de4 94% url("/images/img_techno_css.png"),
+    python linear-gradient(135deg, #3d7daf 50%, #ffd63b 50%) 90% url("/images/img_techno_python.png"),
+    js #f7df1e 80% url("/images/img_techno_js.png"),
+    postgre #306792 70% url("/images/img_techno_db.png"),
+    php #4f5b93 70% url("/images/img_techno_php.png"),
+    ;
+
+.skills {
+    display: flex;
+
+    @include media-bp-down(lg) {
+        flex-direction: column;
+    }
+
+
+
+    &__side-img {
+        background: url("/images/img_side_skills.jpg");
+        min-width: 400px;
+        @include media-bp-up(lg) {
+            width: calc(400px + 10%);
+        }
+        max-width: 600px;
+        background-size: cover;
+        min-height: 600px;
+    }
+    &__skills {
+        flex-grow: 1;
+    }
+}
+
+.skill-container {
+    margin: $spacer;
+    background: lightgray;
+    box-shadow: inset -2px 2px 2px gray;
+}
+
+.skill {
+    width: var(--skill-level, 100%);
+    background: var(--skill-color, red);
+    padding: ($spacer * 0.5) $spacer;
+    font-size: 1.5rem;
+    display: flex;
+
+    @each $name, $color, $level, $url in $skills {
+        &--#{$name} {
+            --skill-color: #{$color};
+            --skill-level: #{$level};
+            &::before {
+                content: " ";
+                width: 2rem;
+                background-image: $url;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &::after {
+                margin-left: auto;
+                content: "#{$level}";
+            }
+        }
+    }
+}

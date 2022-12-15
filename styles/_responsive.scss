@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "variables" as *;
+
+@mixin media-bp-up($size) {
+    @media screen and (min-width: map.get($grid-breakpoints, $size)) {
+        @content;
+    }
+}
+@mixin media-bp-down($size) {
+    @media screen and (max-width: (map.get($grid-breakpoints, $size) - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin media-bps($sep: "-", $include_no_bp: true) {
+    @if ($include_no_bp) {
+        @content ($sep);
+    }
+    @each $name, $size in $grid-breakpoints {
+        @if $size != 0 {
+            @include media-bp-up($name) {
+                $sep-name: #{$sep}#{$name}#{$sep};
+                @content ($sep-name);
+            }
+        }
+    }
+}

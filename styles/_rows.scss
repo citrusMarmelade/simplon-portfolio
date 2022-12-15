@@ -1,0 +1,15 @@
+@use "responsive" as *;
+@use "mixins" as *;
+
+.row {
+    width: 100%;
+    @include x(padding, 10%);
+    
+    @include media-bp-down(lg) {
+        @include x(padding, 5%);
+    }
+
+    &--fullsize {
+        @include x(padding, 0);
+    }
+}

@@ -1,0 +1,43 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.section {
+    @include y(padding, $spacer * 2);
+
+    &:nth-child(odd) {
+        background: get_color(light);
+    }
+    &__header {
+        padding: $spacer*0.5;
+        position: relative;
+
+        + * {
+            margin-top: $spacer;            
+        }
+
+        &:before {
+            content: attr(data-bg-text);
+            display: block;
+            color: rgba(#000000, 0.2);
+            text-align: center;
+            font-size: min(calc(1rem + 10vw), 6rem);
+            font-weight: bold;
+        }
+        &:after {
+            content: " ";
+            display: block;
+            width: 3rem;
+            @include x(margin, auto);
+            border-bottom: black 1px solid;
+        }
+        h2 {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            font-size: min(calc(0.8rem + 2vw), 2.75rem);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    }
+}

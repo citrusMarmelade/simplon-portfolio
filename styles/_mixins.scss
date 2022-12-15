@@ -1,0 +1,20 @@
+@mixin x($prop, $value) {
+    #{$prop}-left: $value;
+    #{$prop}-right: $value;
+}
+@mixin y($prop, $value) {
+    #{$prop}-top: $value;
+    #{$prop}-bottom: $value;
+}
+
+$_sides: (b: bottom, t: top, l: left, r: right);
+
+@mixin sides($include_no_sides: true) {
+    @if ($include_no_sides) {
+        @content("", "");
+    }
+    @each $name, $side in $_sides {
+        $side: -#{$side};
+        @content($name, $side);
+    }
+}
